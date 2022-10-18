@@ -2,11 +2,31 @@
 <html>
 
     <head>
-        <title></title>
+        <title>Show selector</title>
     </head>
 
     <body>
-
+        <form method="get">
+            <label id="userInput" name="userInput">Input your own show: </label>
+            <input id="userTextbox" value="Type in a show name" type="text" onfocus="clearText();">
+            <label>Choose Show type</label>
+            <select name="showType" id="type">
+                <option value="anime">Anime</option>
+                <option value="cartoon">Cartoon</option>
+            </select>
+            <button id="submit" onclick="printUserText();">Submit</button>
+            <p id="userShowName"></p>
+        </form>
     </body>
-
 </html>
+
+<script>
+    function printUserText()
+    {
+        document.getElementById('userShowName').innerHTML = document.getElementById('userTextbox').value;
+    }
+    function clearText()
+    {
+        document.getElementById('userTextbox').value = "";
+    }
+</script>
