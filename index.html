@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Show selector</title>
+    </head>
+
+    <body>
+        <form method="get">
+            <label id="userInput" name="userInput">Input a show in list: </label>
+            <input id="userTextbox" value="Search for a show" type="text" onfocus="clearText();">
+            <label>Choose Show type</label>
+            <button id="submit" onkeypress="printUserText();">Submit</button>
+            <p id="userShowName"></p>
+        </form>
+    </body>
+</html>
+
+<script>
+    function printUserText()
+    {
+        document.getElementById('userShowName').innerHTML = document.getElementById('userTextbox').value;
+    }
+    function clearText()
+    {
+        document.getElementById('userTextbox').value = "";
+    }
+</script>

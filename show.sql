@@ -9,7 +9,6 @@
  */
 SHOW TABLES;
 
-
 DROP TABLE show_table;
 CREATE TABLE show_table(
     show_id INT NOT NULL AUTO_INCREMENT,
