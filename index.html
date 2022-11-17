@@ -7,10 +7,9 @@
 
     <body>
         <form method="get">
-            <label id="userInput" name="userInput">Input a show in list: </label>
-            <input id="userTextbox" value="Search for a show" type="text" onfocus="clearText();">
-            <label>Choose Show type</label>
-            <button id="submit" onkeypress="printUserText();">Submit</button>
+            <label id="userInput" name="userInput">Input show name from table: </label>
+            <input id="userTextbox" value="Type in a show name" type="text" onfocus="clearText();">
+            <button id="submit" onclick="printUserText();">Submit</button>
             <p id="userShowName"></p>
         </form>
     </body>
