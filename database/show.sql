@@ -10,10 +10,9 @@
 SHOW DATABASES;
 USE CSC174023;
 SHOW TABLES;
+SHOW TRIGGERS;
 
 DROP TABLE show_table;
-
-
 CREATE TABLE show_table(
     show_id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
@@ -75,8 +74,38 @@ CREATE TRIGGER on_Insert
     END $$
 DELIMITER ;
 
-CALL anime_Insert('test2', 'Spring', 2000);
-CALL cartoon_Insert('test1', 'CN', 2000);
+CALL anime_Insert('Bleach', 'Fall', 2004);
+CALL anime_Insert('Demon Slayer', 'Spring', 2019);
+CALL anime_Insert('Detective Conan', 'Winter', 1994);
+CALL anime_Insert('Dragon Ball', 'Winter', 1986);
+CALL anime_Insert('Gj-Bu', 'Winter', 2013);
+CALL anime_Insert('Initial D', 'Spring', 1998);
+CALL anime_Insert('Komi Can\'t Communicate', 'Fall', 2021);
+CALL anime_Insert('KonoSuba', 'Winter', 2016);
+CALL anime_Insert('My Hero Academia', 'Spring', 2016);
+CALL anime_Insert('Naruto', 'Fall', 1999);
+CALL anime_Insert('One Piece', 'Fall', 1999);
+CALL anime_Insert('One Punch Man', 'Winter', 2015);
+CALL anime_Insert('Spice and Wolf', 'Winter', 2008);
+CALL anime_Insert('Tanaka-kun is Always Listless', 'Spring', 2016);
+
+CALL cartoon_Insert('Adventure Time', 'Cartoon network', 2010);
+CALL cartoon_Insert('Avatar: The Last Airbender', 'Nickelodeon', 2005);
+CALL cartoon_Insert('Batman: The Animated Series', 'Fox Kids', 1992);
+CALL cartoon_Insert('Chowder','Cartoon Network',2007);
+CALL cartoon_Insert('Family Guy', 'Fox',1999);
+CALL cartoon_Insert('Justice League', 'Cartoon Network',2001);
+CALL cartoon_Insert('Mickey Mouse Clubhouse', 'Disney Channel', 2016);
+CALL cartoon_Insert('Popeye the Sailor','Syndication', 1960);
+CALL cartoon_Insert('Rick and Morty','Adult Swim',2013);
+CALL cartoon_Insert('SpongeBob SquarePants','Nickelodeon',    1999);
+CALL cartoon_Insert('Teen Titans','Cartoon Network',2003);
+CALL cartoon_Insert('The Boondocks', 'Adult Swim',2005);
+CALL cartoon_Insert('The Charlie Brown and Snoopy Show','CBS',1983);
+CALL cartoon_Insert('The Simpsons','Fox',1989);
+CALL cartoon_Insert('Tom and Jerry','CBS',1994);
+CALL cartoon_Insert('Ultimate Spider-Man','Disney XD',2012);
+
 
 TRUNCATE show_table;
 SELECT * FROM show_table;
