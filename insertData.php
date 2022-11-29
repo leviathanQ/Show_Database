@@ -1,21 +1,23 @@
 <?php
 
 	require 'db_conn.php';
-	
-	$show_id = $_REQUEST['userInput'];
 		
-	echo $show_id;
+	$stmt = mysqli_stmt_init($conn);
+	mysqli_stmt_prepare($stmt,  "INSERT INTO user_input SELECT show_id FROM show_table WHERE name = (?)");
 
-	$sql = "INSERT INTO user_input VALUES ($show_id)";
+	mysqli_stmt_bind_param($stmt, "s", $show_Name);
+
+	$show_Name = $_REQUEST['userInput'];
+
+	echo gettype($show_Name);
 	
-	if(mysqli_query($conn, $sql))
-	{
-		echo "<h3>data stored in a database successfully</h3>";
-	}
-	else
-	{
-		echo "\nERROR: VALUE NOT FOUND IN SHOW_TABLE" . mysqli_error($conn);
-	}
+	mysqli_stmt_execute($stmt);
+
+	//echo "<p>RECORD INSERTED SUCCESSFULLY</p>";
+	
+	header("Location: home.php");	
+
+	mysqli_stmt_close($stmt);
 
 	mysqli_close($conn);
 ?>
