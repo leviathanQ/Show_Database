@@ -12,13 +12,9 @@
 
 	//Getting user's input from an input named 'userInput'
 	$show_Name = $_REQUEST['userInput'];
-
-	//echo gettype($show_Name);
 	
 	//Executing the prepared statement with user's input
 	mysqli_stmt_execute($stmt);
-
-	//echo "<p>RECORD INSERTED SUCCESSFULLY</p>";
 	
 	header("Location: home.php");	//Returning back to home screen
 
