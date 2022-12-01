@@ -19,17 +19,20 @@ require "db_conn.php"; // Making sure this file has the connection to our databa
 			</style>
 	</head>
 	<body>
+		<!-- the form below sends the label information into insertData.php after pressing submit -->
 		<form action="insertData.php" method="POST">
 			<label name="inputLabel">Input show name: </label>
 			<input name="userInput" type="text" placeholder="show name">
 			<button id="submit">Submit</button>
 		</form>
-		
+
+		<!-- this form erases table data in user_table -->
 		<form action="clearUserTable.php" method="POST">
 			<input type="submit" name="clearTable" value="Clear Table" />
 		</form>
 		<br>
 	
+		<!-- this form recieves data from user_table and shows it -->
 		<form method="GET">
 			<table>
 				<tr style="text-align: center">
@@ -43,8 +46,8 @@ require "db_conn.php"; // Making sure this file has the connection to our databa
 					<th>Cartoon Network</th>
 					<th>Cartoon Release</th>
 				</tr>
-				<tr>
-					<?php
+				<tr><!-- this fetches user_table database into the html table -->
+					<?php 
 					$search_result = mysqli_query($conn,"SELECT * FROM user_table");
               				while($data = mysqli_fetch_array($search_result)) 
 		                	{ ?>
@@ -60,8 +63,9 @@ require "db_conn.php"; // Making sure this file has the connection to our databa
 				</tr>
 			</table>
 		</form>
+
 		<br>
-		
+		<!-- this form recieves data from the show_table and shows it -->
 		<form method="GET">	
 			<table>
 				<tr style="text-align: center">
@@ -75,7 +79,7 @@ require "db_conn.php"; // Making sure this file has the connection to our databa
 					<th>Cartoon Network</th>
 					<th>Cartoon Release</th>
 				</tr>
-				<tr>
+				<tr><!-- this fetches the data from show_table into the html table -->
 					<?php
 					$search_result = mysqli_query($conn, "SELECT * FROM show_table ORDER BY show_Type ASC, name");
 					while($data = mysqli_fetch_array($search_result)) 
