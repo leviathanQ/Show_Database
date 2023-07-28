@@ -2,7 +2,7 @@
 
 For this project, we design a website which takes in a user's input and store it onto a table called 'User's Table'. We provided a list of shows that the user must select from under 'Show Table'. The purpose of this project is to understand how database(s) connect to (talk to) the frontend, creating security against SQL injection, and displaying our tables onto our website. 
 
-Website link: https://ecs-pw-proj-web.ecs.csus.edu/~stevenwho/show_database/home.php
+Website link (IMPORTANT - WILL NEED TO BE UNDER CSUS INTERNET SERVER): https://ecs-pw-proj-web.ecs.csus.edu/~stevenwho/show_database/home.php
 
 ## Home and functionality
 For our website, our display is in the file home.php and it displays an input box with two tables. One table is for the User in which they can type in a show from the 'Show Table' list and insert it into their 'User Table'.
